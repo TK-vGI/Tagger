@@ -56,8 +56,22 @@ git push origin --tags                          // new tag pushed to remote repo
 end stage 5 */
 
 /* stage6
-
-
+// navigate to repository directory, check with git status, git branch
+// Modify content of the main.py:
+echo -e 'from datetime import datetime\n' > main.py
+echo -e 'def get_day_name():\n'>> main.py
+echo -e 'date_obj = datetime.utcnow()\n' >> main.py
+echo 'day_name = date_obj.strftime('\''%A'\'')' >> main.py
+echo -e 'return day_name' >> main.py
+echo -e 'def get_month_name():\n'>> main.py
+echo -e 'date_obj = datetime.utcnow()\n' >> main.py
+echo 'month_name = date_obj.strftime('\''%B'\'')' >> main.py    // this line was changed %m --> %B
+echo -e 'return month_name' >> main.py
+git add main.py
+git commit -m "fix: Bug fix month name"
+git tag -a 0.2.1 -m "Month name bug fix"
+git push origin main
+git push origin --tags
 
 end stage 6 */
 
