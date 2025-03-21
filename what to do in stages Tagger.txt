@@ -15,15 +15,15 @@ echo -e 'date_obj = datetime.utcnow()\n' >> main.py
 echo 'day_name = date_obj.strftime('\''%A'\'')' >> main.py
 echo -e 'return day_name' >> main.py
 
-git add main.py					// Add the changes to the staging area
+git add main.py					            // Add the changes to the staging area
 git commit -m "feat: Day name function"		// Make your first commit with the commit message feat: Day name function
 
 end stage 2 */
 
 /* stage3
 
-git tag v0		//Tag the most recent commit with a lightweight tag as v0 in local repo
-git push origin v0	// Push the tags to the remote's main branch
+git tag v0		        //Tag the most recent commit with a lightweight tag as v0 in local repo
+git push origin v0  	// Push the tags to the remote's main branch
 git push origin main	//Push the modifications to the remote's main branch
 
 end stage 3 */
@@ -31,16 +31,27 @@ end stage 3 */
 /* stage4
 // navigate to repository directory, check with git status, git branch
 
-git tag -d v0					// remove tag in local repo
-git push origin :refs/tags/v0			// remove tag in remote repo
+git tag -d v0				                	// remove tag in local repo
+git push origin :refs/tags/v0			        // remove tag in remote repo
 git tag -a 0.1.0 -m "Day name functionality"	// new semantic tag local
-git push origin --tags				// new tag pushed to remote repo
+git push origin --tags				            // new tag pushed to remote repo
 
 end stage 4 */
 
 /* stage5
+// navigate to repository directory, check with git status, git branch
 
+// Modify content of the main.py:
+echo -e 'def get_month_name():\n'>> main.py
+echo -e 'date_obj = datetime.utcnow()\n' >> main.py
+echo 'month_name = date_obj.strftime('\''%m'\'')' >> main.py
+echo -e 'return month_name' >> main.py
 
+git add main.py                                 // Add the changes to the staging area
+git commit -m "feat: Month names"               // Commit with the message feat: Month names
+git tag -a 0.2.0 -m "Month name functionality"  // new semantic tag local
+git push origin main                            //Push the modifications to the remote's main branch
+git push origin --tags                          // new tag pushed to remote repo
 
 end stage 5 */
 
